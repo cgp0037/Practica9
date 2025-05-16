@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Netflix Header con Fondo Dinámico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+    <div class="infoPeli" id="infoPeli">
+        <header class="header-overlay infoPeli-overlay text-white">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start">
+                    <img src="img/Netflix.png" alt="Netflix" class="img-fluid logo" />
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">TV Shows</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">New & Popular</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">My List</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Others</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-3 text-center text-md-end">
+                    <a href="#" class="text-white me-3"><i class="bi bi-search"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-bell"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-person-circle"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <div class="infoPeli-content text-white">
+            <h1 id="tituloPeli">Título de la Película</h1>
+            <p id="descripcionPeli">Aquí va una breve descripción de la película seleccionada.</p>
+            <div class="duracion" id="duracionPeli">Duración: 0h 00min</div>
+            <button class="btn-play"><i class="bi bi-play-fill"></i> Reproducir</button>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h5>Populares</h5>
+        <div class="d-flex flex-wrap">
+            <img src="img/fondo1.jpg" class="peliPequena-img" data-id="peli1" alt="Fondo 1" />
+            <img src="img/fondo2.jpg" class="peliPequena-img" data-id="peli2" alt="Fondo 2" />
+            <img src="img/fondo3.jpg" class="peliPequena-img" data-id="peli3" alt="Fondo 3" />
+            <img src="img/fondo4.jpg" class="peliPequena-img" data-id="peli4" alt="Fondo 4" />
+            <img src="img/fondo5.jpg" class="peliPequena-img" data-id="peli5" alt="Fondo 5" />
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h5>Familia</h5>
+        <div class="d-flex flex-wrap">
+            <img src="img/fondo6.jpg" class="peliPequena-img" data-id="peli6" alt="Fondo 6" />
+            <img src="img/fondo7.jpg" class="peliPequena-img" data-id="peli7" alt="Fondo 7" />
+            <img src="img/fondo8.jpg" class="peliPequena-img" data-id="peli8" alt="Fondo 8" />
+            <img src="img/fondo9.jpg" class="peliPequena-img" data-id="peli9" alt="Fondo 9" />
+            <img src="img/fondo10.jpg" class="peliPequena-img" data-id="peli10" alt="Fondo 10" />
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const peliculas = {
+            peli1: {
+                fondo: 'img/fondo1.jpg',
+                titulo: 'Rebel Moon',
+                descripcion: 'Una joven con un pasado misterioso lidera la resistencia contra un imperio tiránico en una galaxia lejana.',
+                duracion: '2h 13min'
+            },
+            peli2: {
+                fondo: 'img/fondo2.jpg',
+                titulo: 'Carry On',
+                descripcion: 'Un joven empleado de seguridad en el aeropuerto es chantajeado durante la Navidad con consecuencias explosivas.',
+                duracion: '1h 40min'
+            },
+            peli3: {
+                fondo: 'img/fondo3.jpg',
+                titulo: 'Alerta Roja',
+                descripcion: 'Un agente del FBI se asocia con un ladrón de arte para capturar a una criminal aún más escurridiza.',
+                duracion: '1h 58min'
+            },
+            peli4: {
+                fondo: 'img/fondo4.jpg',
+                titulo: 'Paradise',
+                descripcion: 'En un futuro cercano, una empresa permite intercambiar años de vida por dinero, revelando un mundo oscuro.',
+                duracion: '1h 57min'
+            },
+            peli5: {
+                fondo: 'img/fondo5.jpg',
+                titulo: 'Rebel Ridge',
+                descripcion: 'Un exmilitar se enfrenta a una red de corrupción en una historia intensa de justicia y acción.',
+                duracion: '1h 50min'
+            },
+            peli6: {
+                fondo: 'img/fondo6.jpg',
+                titulo: 'La Casa de Papel',
+                descripcion: 'Un grupo de criminales, liderados por El Profesor, ejecuta el atraco más ambicioso de la historia en España.',
+                duracion: 'Serie - 5 temporadas'
+            },
+            peli7: {
+                fondo: 'img/fondo7.jpg',
+                titulo: 'Stranger Things',
+                descripcion: 'Un grupo de niños descubre un mundo alternativo y fuerzas sobrenaturales tras la desaparición de su amigo.',
+                duracion: 'Serie - 4 temporadas'
+            },
+            peli8: {
+                fondo: 'img/fondo8.jpg',
+                titulo: 'Proyecto Adam',
+                descripcion: 'Un piloto viaja en el tiempo para encontrarse con su yo más joven y salvar el futuro.',
+                duracion: '1h 46min'
+            },
+            peli9: {
+                fondo: 'img/fondo9.jpg',
+                titulo: 'Bird Box',
+                descripcion: 'Una madre y sus hijos luchan por sobrevivir a una fuerza invisible que obliga a la gente a quitarse la vida.',
+                duracion: '2h 4min'
+            },
+            peli10: {
+                fondo: 'img/fondo10.jpg',
+                titulo: 'El Hombre Gris',
+                descripcion: 'Un agente de la CIA se convierte en objetivo de un asesino psicópata tras descubrir secretos de la agencia.',
+                duracion: '2h 2min'
+            }
+        };
+
+        $(document).ready(function () {
+            $('.peliPequena-img').click(function () {
+                const id = $(this).data('id');
+                const peli = peliculas[id];
+
+                if (peli) {
+                    $('#infoPeli').css('background-image', `url('${peli.fondo}')`);
+                    $('#tituloPeli').text(peli.titulo);
+                    $('#descripcionPeli').text(peli.descripcion);
+                    $('#duracionPeli').text(`Duración: ${peli.duracion}`);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('.peliPequena-img').first().trigger('click');
+        });
+
+    </script>
+</body>
+
+</html>

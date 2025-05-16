@@ -1,0 +1,110 @@
+:root {
+    --color-principal: #e50914;
+    --color-secundario: #ffffff;
+    --color-fondo-overlay: rgba(0, 0, 0, 0.5);
+    --color-texto: #ffffff;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --transicion: 0.3s ease;
+    --borde-radius: 10px;
+    --espaciado: 1.5rem;
+    --tamanio-maximo: 500px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #141414;
+    color: var(--color-texto);
+}
+
+.logo {
+    max-height: 40px;
+}
+
+.nav-link {
+    color: var(--color-secundario);
+    font-size: 1rem;
+    transition: transform var(--transicion), text-decoration var(--transicion);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.infoPeli {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-fondo-overlay);
+    z-index: 10;
+}
+
+.infoPeli-content {
+    position: relative;
+    z-index: 5;
+    padding: 2rem;
+    max-width: var(--tamanio-maximo);
+    background-color: rgba(31, 30, 30, 0.5);
+    border-radius: var(--borde-radius);
+    left: 2rem;
+
+}
+
+.infoPeli-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.infoPeli-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.duracion {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-play {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: var(--borde-radius);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transicion);
+    box-shadow: var(--sombra);
+}
+
+.btn-play:hover {
+    background-color: #b20710;
+}
+
+.peliPequena-img {
+    width: 230px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--borde-radius);
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.peliPequena-img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--sombra);
+}
